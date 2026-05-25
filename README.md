@@ -1,7 +1,17 @@
-# Fresia SaaS Next App
+# Arkitect Static Website
 
-This is a Next.js app ready for Vercel upload.
+Static website for `arkitect*`.
 
-- App router files live in `app/`
-- Images live in `public/assets/`
-- Run locally with `npm install` and `npm run dev`
+## Files
+
+- `index.html` - homepage
+- `realizacie-projekty.html` - projects page
+- `sluzby.html`, `o-nas.html`, `kontakt.html` - placeholder pages
+- `404.html` - fallback page
+- `styles.css` - site styles
+- `script.js` - scroll reveal behavior
+- `assets/` - image assets
+
+## Deployment
+
+This site has no build step. Vercel can deploy it directly from the repository root as a static site.
