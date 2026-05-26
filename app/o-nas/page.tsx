@@ -31,12 +31,12 @@ export default function AboutPage() {
           </div>
           <div className="about-stats">
             <div className="stat-box">
-              <h3>98%</h3>
-              <p>Úspešnosť procesov</p>
+              <h3>10x</h3>
+              <p>Zvýšenie efektivity</p>
             </div>
             <div className="stat-box">
-              <h3>24/7</h3>
-              <p>Dostupnosť podpory</p>
+              <h3>100%</h3>
+              <p>Zameranie na výsledky</p>
             </div>
             <div className="stat-box">
               <h3>∞</h3>
