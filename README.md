@@ -1,6 +1,6 @@
-# Arkitect Next Website
+# AI xSolutions Next Website
 
-Next.js website for `arkitect*`, based on the supplied static design.
+Next.js website for `AI xSolutions`, based on the supplied static design.
 
 ## Files
 

@@ -3,7 +3,7 @@ import { PageShell } from "../components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Realizácie & Projekty",
-  description: "Naše realizácie, mini aplikácie, AI riešenia a webové stránky.",
+  description: "Naše realizácie — mini aplikácie, AI riešenia a webové stránky.",
 };
 
 const sections = [

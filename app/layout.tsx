@@ -4,8 +4,8 @@ import ScrollReveal from "./components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: {
-    default: "arkitect* | Digitálne riešenia",
-    template: "%s | arkitect*",
+    default: "AI xSolutions | Digitálne riešenia",
+    template: "%s | AI xSolutions",
   },
   description:
     "Tvoríme mini aplikácie, AI riešenia a weby. Menej manuálnej práce, viac automatizácie.",

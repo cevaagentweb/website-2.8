@@ -34,6 +34,10 @@ a {
     text-decoration: none;
 }
 
+.mt-10 {
+    margin-top: 15px;
+}
+
 /* ============================================
    NAVBAR
    ============================================ */
@@ -250,6 +254,12 @@ a {
 .footer-brand p {
     color: var(--text-secondary);
     font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.company-details {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .footer-links-group {
@@ -280,6 +290,24 @@ a {
 
 .footer-col a:hover {
     opacity: 0.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
 }
 
 .footer-bottom {
@@ -366,7 +394,7 @@ a {
 }
 
 /* ============================================
-   PROJECT SECTIONS
+   PROJECT SECTIONS (Realizácie)
    ============================================ */
 .project-section {
     max-width: 1400px;
@@ -463,6 +491,191 @@ a {
 }
 
 /* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 80px;
+    background: #fafafa;
+    border-radius: var(--card-radius);
+    padding: 60px;
+    border: 1px solid var(--border);
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    letter-spacing: 0;
+}
+
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.info-block p, .info-block a {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.info-block a:hover {
+    opacity: 0.6;
+}
+
+.contact-form-wrapper {
+    flex: 1;
+}
+
+.contact-form-wrapper h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    letter-spacing: 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    background: var(--bg-color);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background: var(--pill-bg);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.about-container {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.stat-box {
+    background: #fafafa;
+    padding: 40px;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 .fade-in {
@@ -485,6 +698,7 @@ a {
    ============================================ */
 @media (max-width: 1024px) {
     .nav-cta-btn { display: none; }
+    .contact-container, .about-container { flex-direction: column; gap: 40px; }
 }
 
 @media (max-width: 768px) {
@@ -507,4 +721,8 @@ a {
     .footer-container { padding: 40px 20px 20px; }
     .page-404 { padding: 160px 20px 80px; }
     .page-404 h1 { font-size: 2rem; }
+    .contact-section, .about-section { padding: 0 20px 60px; }
+    .contact-container { padding: 30px; border-radius: 24px; }
+    .about-stats { grid-template-columns: 1fr; }
+    .stat-box { padding: 30px; border-radius: 24px; }
 }

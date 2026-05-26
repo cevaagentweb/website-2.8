@@ -63,7 +63,7 @@ const projectCards = [
 
 export default function Home() {
   return (
-    <PageShell active="projects">
+    <PageShell active="home">
       <section className="hero fade-in">
         <span className="subtitle">Čo robíme</span>
         <h1>Design & Build</h1>
