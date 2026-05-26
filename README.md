@@ -1,17 +1,13 @@
-# Arkitect Static Website
+# Arkitect Next Website
 
-Static website for `arkitect*`.
+Next.js website for `arkitect*`, based on the supplied static design.
 
 ## Files
 
-- `index.html` - homepage
-- `realizacie-projekty.html` - projects page
-- `sluzby.html`, `o-nas.html`, `kontakt.html` - placeholder pages
-- `404.html` - fallback page
-- `styles.css` - site styles
-- `script.js` - scroll reveal behavior
-- `assets/` - image assets
+- `app/` - App Router pages and shared components
+- `app/globals.css` - site styles
+- `public/assets/` - image assets
 
 ## Deployment
 
-This site has no build step. Vercel can deploy it directly from the repository root as a static site.
+Vercel can deploy this as a standard Next.js project. Use `npm run build` to validate locally.
