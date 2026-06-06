@@ -1,12 +1,8 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/o-nas", "destination": "/o-nas.html" },
-    { "source": "/kontakt", "destination": "/kontakt.html" },
-    { "source": "/realizacie-projekty", "destination": "/realizacie-projekty.html" }
-  ]
+  "trailingSlash": false
 }
