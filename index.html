@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI xSolutions | Digitalne riesenia</title>
+    <meta name="description" content="Tvorime mini aplikacie, AI riesenia a weby. Menej manualnej prace, viac automatizacie.">
+    <meta property="og:title" content="AI xSolutions | Digitalne riesenia">
+    <meta property="og:description" content="Automatizacia, AI riesenia a tvorba modernych webovych stranok.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AI xSolutions</a>
+            <div class="nav-pill">
+                <a href="index.html" class="active" data-i18n="nav.home">Domov</a>
+                <a href="realizacie-projekty.html" data-i18n="nav.projects">Projekty</a>
+                <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+                <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+            </div>
+            <div class="nav-right">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">EN</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">&#9728;&#65039;</button>
+                <a href="kontakt.html" class="nav-cta-btn" data-i18n="nav.cta">Napiste nam</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero fade-in">
+            <span class="subtitle" data-i18n="hero.subtitle">Co robime</span>
+            <h1 data-i18n="hero.title" id="hero-main-title">Design &amp; Build</h1>
+            <p data-i18n="hero.desc">Tvorime digitalne nastroje, ktore setria cas a zjednodusuju pracu.</p>
+            <p class="hero-dynamic mt-10">
+                <span data-i18n="hero.dynamic.prefix" style="color: var(--text-secondary);">Nedavno sme napriklad: </span>
+                <strong id="hero-typewriter" style="color: var(--text-primary);"></strong>
+            </p>
+        </section>
+
+        <section class="projects">
+            <a href="realizacie-projekty.html#mini-apps" class="project-card fade-in delay-1">
+                <div class="project-bg" style="background-image: url('assets/ocean_wave.webp');"></div>
+                <div class="project-content">
+                    <h2 data-i18n="card.apps.title">MINI<br>APPS</h2>
+                    <p data-i18n="card.apps.desc">Produktivitne mini aplikacie<br>na mieru.</p>
+                </div>
+            </a>
+
+            <a href="realizacie-projekty.html#ai-solutions" class="project-card fade-in delay-2">
+                <div class="project-bg" style="background-image: url('assets/puzzle_tower.webp');"></div>
+                <div class="project-content">
+                    <h2 data-i18n="card.ai.title">AI<br>RIESENIA</h2>
+                    <p data-i18n="card.ai.desc">Automatizacia a inteligentne<br>spracovanie dat.</p>
+                </div>
+            </a>
+
+            <a href="realizacie-projekty.html#websites" class="project-card fade-in delay-3">
+                <div class="project-bg" style="background-image: url('assets/honey_comb.webp');"></div>
+                <div class="project-content">
+                    <h2 data-i18n="card.web.title">WEBOVE<br>STRANKY</h2>
+                    <p data-i18n="card.web.desc">Moderne weby a webove<br>aplikacie.</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- Tech Stack Marquee -->
+        <section class="tech-marquee-section fade-in">
+            <h3 class="marquee-title" data-i18n="marquee.title">Technologie, ktore pouzivame</h3>
+            <div class="marquee-track">
+                <div class="marquee-inner">
+                    <span class="tech-logo">Python</span>
+                    <span class="tech-logo">OpenAI</span>
+                    <span class="tech-logo">React</span>
+                    <span class="tech-logo">Node.js</span>
+                    <span class="tech-logo">AWS</span>
+                    <span class="tech-logo">POHODA</span>
+                    <span class="tech-logo">Google Cloud</span>
+                    <span class="tech-logo">PostgreSQL</span>
+                    <span class="tech-logo">Python</span>
+                    <span class="tech-logo">OpenAI</span>
+                    <span class="tech-logo">React</span>
+                    <span class="tech-logo">Node.js</span>
+                    <span class="tech-logo">AWS</span>
+                    <span class="tech-logo">POHODA</span>
+                    <span class="tech-logo">Google Cloud</span>
+                    <span class="tech-logo">PostgreSQL</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section fade-in">
+            <span class="subtitle" data-i18n="testimonials.subtitle">Co hovoria klienti</span>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonial-track">
+                    <div class="testimonial-slide active">
+                        <blockquote>&ldquo;Usetrili sme 15 hodin tyzdenne vdaka automatizacii faktur. Skvela spolupraca.&rdquo;</blockquote>
+                        <cite>&mdash; Ing. Peter Novak, konatel</cite>
+                    </div>
+                    <div class="testimonial-slide">
+                        <blockquote>&ldquo;Rychle, profesionalne a presne to, co sme potrebovali. Odporucam.&rdquo;</blockquote>
+                        <cite>&mdash; Maria Horvathova, uctovnicka</cite>
+                    </div>
+                    <div class="testimonial-slide">
+                        <blockquote>&ldquo;Nase interne procesy sa zrychlili o 80%. Investicia, ktora sa vratila za mesiac.&rdquo;</blockquote>
+                        <cite>&mdash; Tomas Kovac, riaditel</cite>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer fade-in">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">AI xSolutions</a>
+                    <p data-i18n="footer.tagline">Digitalne riesenia na mieru.</p>
+                    <p class="company-details mt-10">
+                        Cementarenska 15, Stupava<br>
+                        ICO: 12345678 | DIC: 2021234567
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer.nav">Navigacia</h4>
+                        <a href="index.html" data-i18n="nav.home">Domov</a>
+                        <a href="realizacie-projekty.html" data-i18n="nav.projects">Projekty</a>
+                        <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer.contact">Kontakt</h4>
+                        <a href="tel:+421912345678">+421 912 345 678</a>
+                        <a href="mailto:lepsiaprouktivitadnes@bsktm.eu">lepsiaprouktivitadnes@bsktm.eu</a>
+                        <div class="social-links mt-10">
+                            <a href="#" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">&copy; 2026 AI xSolutions. Vsetky prava vyhradene.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>

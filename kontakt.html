@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | AI xSolutions</title>
+    <meta name="description" content="Kontaktujte nas ohladom vasich potrieb pre AI a automatizaciu.">
+    <meta property="og:title" content="Kontakt | AI xSolutions">
+    <meta property="og:description" content="Kontaktujte nas ohladom vasich potrieb pre AI a automatizaciu.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">AI xSolutions</a>
+            <div class="nav-pill">
+                <a href="index.html" data-i18n="nav.home">Domov</a>
+                <a href="realizacie-projekty.html" data-i18n="nav.projects">Projekty</a>
+                <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+                <a href="kontakt.html" class="active" data-i18n="nav.contact">Kontakt</a>
+            </div>
+            <div class="nav-right">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">EN</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">&#9728;&#65039;</button>
+                <a href="kontakt.html" class="nav-cta-btn" data-i18n="nav.cta">Napiste nam</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="subpage-hero fade-in">
+            <span class="subtitle" data-i18n="contact.subtitle">Spolupraca</span>
+            <h1 data-i18n="contact.title">Opisate nam vas problem</h1>
+            <p data-i18n="contact.desc">Povedzte nam, co vas vo firme zdrzuje, a my vam navrhneme riesenie.</p>
+        </section>
+
+        <section class="contact-section fade-in delay-1">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 data-i18n="contact.info.title">Kontaktne udaje</h2>
+
+                    <div class="info-block">
+                        <h4 data-i18n="contact.info.address.label">Sidlo spolocnosti</h4>
+                        <p>Cementarenska 15<br>Stupava</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4 data-i18n="contact.info.billing.label">Fakturacne udaje</h4>
+                        <p>AI xSolutions<br>ICO: 12345678<br>DIC: 2021234567</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4 data-i18n="contact.info.contact.label">Kontakt</h4>
+                        <p><a href="tel:+421912345678">+421 912 345 678</a><br><a href="mailto:lepsiaprouktivitadnes@bsktm.eu">lepsiaprouktivitadnes@bsktm.eu</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2 data-i18n="contact.title">Opisate nam vas problem</h2>
+                    <form class="contact-form" action="https://formsubmit.co/lepsiaprouktivitadnes@bsktm.eu" method="POST">
+                        <input type="hidden" name="_subject" value="Nova sprava z webu AI xSolutions">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.name">Meno a priezvisko</label>
+                            <input type="text" id="name" name="name" data-i18n-placeholder="contact.name.placeholder" placeholder="Vas kontakt..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.email">E-mail</label>
+                            <input type="email" id="email" name="email" data-i18n-placeholder="contact.email.placeholder" placeholder="vas@email.sk" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.message">Popis vasho problemu</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Kazdy mesiac rucne prepisujem data..." required style="transition: all 0.3s ease;"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-i18n="contact.send">Odoslat spravu</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-flow fade-in delay-2">
+                <div class="flow-step">
+                    <div class="flow-step-number">1</div>
+                    <h4 data-i18n="contact.flow.step1.title">Opisete problem</h4>
+                    <p data-i18n="contact.flow.step1.desc">Povedzte nam, co vas vo firme zdrzuje alebo kde stracate cas na manualnej praci.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">2</div>
+                    <h4 data-i18n="contact.flow.step2.title">Analyzujeme moznosti</h4>
+                    <p data-i18n="contact.flow.step2.desc">Pozrieme sa na vase procesy a navrhneme prakticke riesenie na mieru.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-number">3</div>
+                    <h4 data-i18n="contact.flow.step3.title">Posleme cenovu ponuku</h4>
+                    <p data-i18n="contact.flow.step3.desc">Dostanete presnu cenovu ponuku s popisom riesenia. Bez zavazkov.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer fade-in">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">AI xSolutions</a>
+                    <p data-i18n="footer.tagline">Digitalne riesenia na mieru.</p>
+                    <p class="company-details mt-10">
+                        Cementarenska 15, Stupava<br>
+                        ICO: 12345678 | DIC: 2021234567
+                    </p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer.nav">Navigacia</h4>
+                        <a href="index.html" data-i18n="nav.home">Domov</a>
+                        <a href="realizacie-projekty.html" data-i18n="nav.projects">Projekty</a>
+                        <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer.contact">Kontakt</h4>
+                        <a href="tel:+421912345678">+421 912 345 678</a>
+                        <a href="mailto:lepsiaprouktivitadnes@bsktm.eu">lepsiaprouktivitadnes@bsktm.eu</a>
+                        <div class="social-links mt-10">
+                            <a href="#" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">&copy; 2026 AI xSolutions. Vsetky prava vyhradene.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
