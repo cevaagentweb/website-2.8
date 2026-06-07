@@ -104,7 +104,11 @@ const translations = {
     'cookie.title': { sk: 'Rešpektujeme vaše súkromie', en: 'We respect your privacy' },
     'cookie.desc': { sk: 'Tento web používa nevyhnutné súbory cookie pre správne fungovanie a analytické súbory cookie pre zlepšenie používateľského zážitku.', en: 'This website uses essential cookies for proper functioning and analytical cookies to improve user experience.' },
     'cookie.accept': { sk: 'Prijať všetky', en: 'Accept all' },
-    'cookie.reject': { sk: 'Iba nevyhnutné', en: 'Essential only' }
+    'cookie.reject': { sk: 'Iba nevyhnutné', en: 'Essential only' },
+
+    // === GALLERY ===
+    'projects.gallery.title': { sk: 'Ukážky softvéru', en: 'Software UI Previews' },
+    'projects.gallery.desc': { sk: 'Prezrite si rozhrania našich aplikácií v akcii.', en: 'Check out the interfaces of our applications in action.' }
 };
 
 // 50 rotating prompt suggestions for contact page

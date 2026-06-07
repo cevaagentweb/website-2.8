@@ -509,4 +509,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Gallery Slider ---
+    const track = document.getElementById('gallery-track');
+    if (track) {
+        const slides = Array.from(track.children);
+        const nextBtn = document.getElementById('gallery-next');
+        const prevBtn = document.getElementById('gallery-prev');
+        const dotsContainer = document.getElementById('gallery-dots');
+        let currentIndex = 0;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function goToSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+        if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    }
+
 }); // end DOMContentLoaded
