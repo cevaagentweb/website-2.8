@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt | AI xSolutions</title>
-    <meta name="description" content="Kontaktujte nas ohladom vasich potrieb pre AI a automatizaciu.">
+    <meta name="description" content="Kontaktujte nás a nechajte si navrhnúť riešenie na mieru pre vašu firmu.">
     <meta property="og:title" content="Kontakt | AI xSolutions">
-    <meta property="og:description" content="Kontaktujte nas ohladom vasich potrieb pre AI a automatizaciu.">
+    <meta property="og:description" content="Kontaktujte nás a nechajte si navrhnúť riešenie na mieru pre vašu firmu.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +34,11 @@
 
     <main>
         <section class="subpage-hero fade-in">
-            <span class="subtitle" data-i18n="contact.subtitle">Spolupraca</span>
-            <h1 data-i18n="contact.title">Opisate nam vas problem</h1>
-            <p data-i18n="contact.desc">Povedzte nam, co vas vo firme zdrzuje, a my vam navrhneme riesenie.</p>
+            <span class="subtitle" data-i18n="contact.subtitle">Kontakt</span>
+            <h1 data-i18n="contact.title">Ako vám môžeme pomôcť?</h1>
+            <p style="min-height: 24px; margin: 0 auto; line-height: 1.6;">
+                <span id="contact-typewriter-text" style="color: var(--text-secondary);"></span><span class="cursor" style="color: var(--text-secondary); animation: blink 1s step-end infinite;">|</span>
+            </p>
         </section>
 
         <section class="contact-section fade-in delay-1">
@@ -58,6 +60,11 @@
                         <h4 data-i18n="contact.info.contact.label">Kontakt</h4>
                         <p><a href="tel:+421912345678">+421 912 345 678</a><br><a href="mailto:lepsiaprouktivitadnes@bsktm.eu">lepsiaprouktivitadnes@bsktm.eu</a></p>
                     </div>
+
+                    <div class="info-block">
+                        <h4 data-i18n="contact.info.payment.label">Platobne podmienky</h4>
+                        <p data-i18n="contact.info.payment.desc">100% spokojnost. Platba az po dodani a schvaleni.</p>
+                    </div>
                 </div>
 
                 <div class="contact-form-wrapper">
@@ -67,22 +74,45 @@
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="">
                         <div class="form-group">
-                            <label for="name" data-i18n="contact.name">Meno a priezvisko</label>
-                            <input type="text" id="name" name="name" data-i18n-placeholder="contact.name.placeholder" placeholder="Vas kontakt..." required>
+                            <label for="name" data-i18n="contact.form.name">Meno a priezvisko</label>
+                            <input type="text" id="name" name="name" placeholder="Váš kontakt..." required>
                         </div>
                         <div class="form-group">
-                            <label for="email" data-i18n="contact.email">E-mail</label>
-                            <input type="email" id="email" name="email" data-i18n-placeholder="contact.email.placeholder" placeholder="vas@email.sk" required>
+                            <label for="company" data-i18n="contact.form.company">Firma / Spoločnosť</label>
+                            <input type="text" id="company" name="company" placeholder="Názov firmy">
                         </div>
                         <div class="form-group">
-                            <label for="message" data-i18n="contact.message">Popis vasho problemu</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Kazdy mesiac rucne prepisujem data..." required style="transition: all 0.3s ease;"></textarea>
+                            <label for="position" data-i18n="contact.form.position">Pozícia vo firme</label>
+                            <select id="position" name="position" class="form-select">
+                                <option value="ceo" data-i18n="contact.form.pos.ceo">CEO / Majiteľ</option>
+                                <option value="marketing" data-i18n="contact.form.pos.marketing">Marketing / Obchod</option>
+                                <option value="finance" data-i18n="contact.form.pos.finance">Ekonomika / Účtovníctvo</option>
+                                <option value="it" data-i18n="contact.form.pos.it">IT / Vývoj</option>
+                                <option value="other" data-i18n="contact.form.pos.other">Iné</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-i18n="contact.form.phone">Telefónne číslo</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+421 900 000 000">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="vas@email.sk" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Napíšte nám o vašej vízii</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Každý mesiac ručne prepisujem dáta..." required style="transition: all 0.3s ease;"></textarea>
                         </div>
                         <button type="submit" class="submit-btn" data-i18n="contact.send">Odoslat spravu</button>
                     </form>
                 </div>
             </div>
             
+            <div class="flow-header fade-in delay-2" style="text-align: center; margin-top: 80px; margin-bottom: 40px; padding: 0 20px;">
+                <span class="subtitle" data-i18n="contact.flow.subtitle">Priebeh spolupráce</span>
+                <h2 id="contact-headline" class="contact-headline-anim" data-i18n="contact.flow.headline1">Nechajte si navrhnúť riešenie na mieru</h2>
+            </div>
+
             <div class="contact-flow fade-in delay-2">
                 <div class="flow-step">
                     <div class="flow-step-number">1</div>
@@ -120,6 +150,7 @@
                         <a href="index.html" data-i18n="nav.home">Domov</a>
                         <a href="realizacie-projekty.html" data-i18n="nav.projects">Projekty</a>
                         <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+                        <a href="bezpecnost.html" data-i18n="nav.security">Bezpecnost</a>
                     </div>
                     <div class="footer-col">
                         <h4 data-i18n="footer.contact">Kontakt</h4>

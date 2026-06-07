@@ -74,3 +74,135 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// Interactive Glitter Starry Orb Effect for Project Cards
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.project-card');
+    
+    cards.forEach(card => {
+        let canvas = document.createElement('canvas');
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '2'; // Above background, below text
+        canvas.style.opacity = '0';
+        canvas.style.transition = 'opacity 0.4s ease';
+        canvas.style.mixBlendMode = 'screen';
+        card.appendChild(canvas);
+        
+        let ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationFrame;
+        let isHovering = false;
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        function resizeCanvas() {
+            canvas.width = card.offsetWidth;
+            canvas.height = card.offsetHeight;
+        }
+        
+        // Setup canvas
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                // Randomly spread around mouse
+                this.baseX = x + (Math.random() - 0.5) * 80;
+                this.baseY = y + (Math.random() - 0.5) * 80;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 2;
+                this.speedY = (Math.random() - 0.5) * 2;
+                this.life = 1;
+                this.decay = Math.random() * 0.02 + 0.02;
+                // Glitter colors: cyan, purple, blue, white
+                const colors = ['#00f2fe', '#4facfe', '#c084fc', '#ffffff'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            update() {
+                // Pull towards mouse slightly
+                let dx = mouseX - this.x;
+                let dy = mouseY - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                
+                if (distance > 10) {
+                    this.x += dx * 0.05 + this.speedX;
+                    this.y += dy * 0.05 + this.speedY;
+                } else {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
+                
+                this.life -= this.decay;
+            }
+            
+            draw() {
+                ctx.globalAlpha = Math.max(0, this.life);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Glow
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+            }
+        }
+        
+        function animate() {
+            if (!isHovering && particles.length === 0) return;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Spawn new particles if hovering
+            if (isHovering) {
+                for (let i = 0; i < 5; i++) {
+                    particles.push(new Particle(mouseX, mouseY));
+                }
+            }
+            
+            // Update and draw
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                if (particles[i].life <= 0) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            
+            animationFrame = requestAnimationFrame(animate);
+        }
+        
+        card.addEventListener('mouseenter', (e) => {
+            isHovering = true;
+            canvas.style.opacity = '1';
+            
+            const rect = card.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+            
+            animate();
+        });
+        
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            isHovering = false;
+            canvas.style.opacity = '0';
+            // Animation loop will stop itself when particles die
+        });
+    });
+});

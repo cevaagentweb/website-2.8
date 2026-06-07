@@ -9,6 +9,7 @@ const entries = [
   "404.html",
   "animations.js",
   "assets",
+  "bezpecnost.html",
   "index.html",
   "kontakt.html",
   "lang.js",
