@@ -10,6 +10,7 @@ const entries = [
   "animations.js",
   "assets",
   "bezpecnost.html",
+  "check.js",
   "index.html",
   "kontakt.html",
   "lang.js",

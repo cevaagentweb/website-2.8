@@ -107,8 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
     });
-});
-
     // Rotating Placeholder for Contact Form
     const messageTextarea = document.getElementById('message');
     if (messageTextarea && window.promptSuggestions) {
@@ -394,3 +392,121 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }, 9000); // Swap every 9 seconds
     }
+
+    // --- Chat/Contact FAB (Floating Action Button) ---
+    // Make sure we are not already at the contact form
+    const isContactPage = window.location.pathname.includes('kontakt.html');
+    if (!isContactPage) {
+        const fab = document.createElement('a');
+        fab.href = 'kontakt.html';
+        fab.className = 'chat-fab';
+        fab.innerHTML = `
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.477 2 2 5.582 2 10c0 2.535 1.488 4.796 3.791 6.222.062.909-.281 2.222-.843 3.255a.5.5 0 00.428.75c1.888-.026 3.655-.668 5.068-1.57A10.665 10.665 0 0012 18c5.523 0 10-3.582 10-8s-4.477-8-10-8zm-2.5 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+            </svg>
+        `;
+        document.body.appendChild(fab);
+
+        // Show/hide based on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                fab.classList.add('visible');
+            } else {
+                fab.classList.remove('visible');
+            }
+        });
+    }
+
+    // --- Cookie Consent Banner ---
+    if (!localStorage.getItem('cookieConsent')) {
+        const cookieBanner = document.createElement('div');
+        cookieBanner.className = 'cookie-banner';
+        
+        cookieBanner.innerHTML = `
+            <div>
+                <h4 data-i18n="cookie.title">Rešpektujeme vaše súkromie</h4>
+                <p data-i18n="cookie.desc">Tento web používa nevyhnutné súbory cookie pre správne fungovanie a analytické súbory cookie pre zlepšenie používateľského zážitku.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn reject" id="cookie-reject" data-i18n="cookie.reject">Iba nevyhnutné</button>
+                <button class="cookie-btn accept" id="cookie-accept" data-i18n="cookie.accept">Prijať všetky</button>
+            </div>
+        `;
+        document.body.appendChild(cookieBanner);
+        
+        // Wait a short moment to trigger the transition
+        setTimeout(() => {
+            cookieBanner.classList.add('visible');
+            if (window.setLang) window.setLang(window.getCurrentLang ? window.getCurrentLang() : 'sk');
+        }, 1000);
+
+        document.getElementById('cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'all');
+            cookieBanner.classList.remove('visible');
+            setTimeout(() => cookieBanner.remove(), 600);
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'essential');
+            cookieBanner.classList.remove('visible');
+            setTimeout(() => cookieBanner.remove(), 600);
+        });
+    }
+
+    // --- Mobile Menu ---
+    const navRight = document.querySelector('.nav-right');
+    const navPill = document.querySelector('.nav-pill');
+    if (navRight && navPill) {
+        // Create hamburger button
+        const hamburger = document.createElement('button');
+        hamburger.className = 'hamburger';
+        hamburger.id = 'hamburger';
+        hamburger.setAttribute('aria-label', 'Toggle menu');
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        navRight.appendChild(hamburger);
+
+        // Create mobile menu overlay
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'mobile-menu';
+        mobileMenu.id = 'mobile-menu';
+        
+        // Clone links from nav-pill
+        const links = navPill.querySelectorAll('a');
+        links.forEach(link => {
+            const clone = link.cloneNode(true);
+            mobileMenu.appendChild(clone);
+        });
+
+        // Clone CTA button if exists in nav-right
+        const cta = navRight.querySelector('.nav-cta-btn');
+        if (cta) {
+            const ctaClone = cta.cloneNode(true);
+            ctaClone.className = 'mobile-cta';
+            mobileMenu.appendChild(ctaClone);
+        }
+
+        document.body.appendChild(mobileMenu);
+
+        // Toggle logic
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Re-apply language if setLang exists
+        if (window.setLang && window.getCurrentLang) {
+            window.setLang(window.getCurrentLang());
+        }
+    }
+
+}); // end DOMContentLoaded

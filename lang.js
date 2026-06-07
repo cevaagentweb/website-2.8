@@ -99,6 +99,12 @@ const translations = {
     '404.title': { sk: 'Stránka sa nenašla', en: 'Page not found' },
     '404.desc': { sk: 'Táto stránka ešte neexistuje alebo bola premiestnená.', en: 'This page does not exist yet or has been moved.' },
     '404.back': { sk: 'Späť na hlavnú stránku', en: 'Back to homepage' },
+
+    // === COOKIES ===
+    'cookie.title': { sk: 'Rešpektujeme vaše súkromie', en: 'We respect your privacy' },
+    'cookie.desc': { sk: 'Tento web používa nevyhnutné súbory cookie pre správne fungovanie a analytické súbory cookie pre zlepšenie používateľského zážitku.', en: 'This website uses essential cookies for proper functioning and analytical cookies to improve user experience.' },
+    'cookie.accept': { sk: 'Prijať všetky', en: 'Accept all' },
+    'cookie.reject': { sk: 'Iba nevyhnutné', en: 'Essential only' }
 };
 
 // 50 rotating prompt suggestions for contact page
